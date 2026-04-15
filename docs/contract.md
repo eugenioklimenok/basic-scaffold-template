@@ -11,6 +11,12 @@
 - `bot`
 - `worker`
 
+## Generated content policy
+
+- The scaffold is language-agnostic.
+- Optional files created by flags are placeholders and must be completed by the target project.
+- Type-specific scaffolds add descriptive entrypoint placeholder files, not runnable framework code.
+
 ## Validation rules
 
 - `name` must use kebab-case.

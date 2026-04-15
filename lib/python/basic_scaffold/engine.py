@@ -57,13 +57,15 @@ def _render_env(name: str, scaffold_type: str, owner: str) -> str:
 
 def _render_makefile() -> str:
     return (
-        ".PHONY: help test lint\n\n"
+        ".PHONY: help test lint fmt\n\n"
         "help:\n"
-        "\t@echo \"Available targets: test lint\"\n\n"
+        "\t@echo \"Available targets: test lint fmt\"\n\n"
         "test:\n"
-        "\t@python3 -m unittest discover -s tests\n\n"
+        "\t@echo \"TODO: define project test command\"\n\n"
         "lint:\n"
-        "\t@echo \"No lint configured yet\"\n"
+        "\t@echo \"TODO: define project lint command\"\n\n"
+        "fmt:\n"
+        "\t@echo \"TODO: define project format command\"\n"
     )
 
 
@@ -80,18 +82,20 @@ def _render_gitignore() -> str:
 
 def _render_script(name: str) -> str:
     return (
-        "#!/usr/bin/env bash\n"
-        "set -eu\n\n"
-        f"echo \"TODO: implement {name}\"\n"
+        "# Placeholder script\n"
+        f"# Purpose: {name}\n"
+        "# Replace this file with the command runner that fits your stack.\n"
     )
 
 
 def _render_entrypoint(module_name: str) -> str:
     return (
-        "def main() -> None:\n"
-        f"    print(\"{module_name} scaffold ready\")\n\n\n"
-        "if __name__ == \"__main__\":\n"
-        "    main()\n"
+        f"# {module_name} entrypoint placeholder\n\n"
+        "# Define the real entrypoint for this project type.\n"
+        "# Examples:\n"
+        "# - API: app server bootstrap\n"
+        "# - Bot: message polling or webhook handler\n"
+        "# - Worker: queue consumer or scheduled job\n"
     )
 
 
@@ -105,11 +109,11 @@ def _load_template_files(name: str, scaffold_type: str, owner: str, with_gitigno
     if with_makefile:
         files["Makefile"] = _render_makefile()
     if with_scripts:
-        files["scripts/bootstrap.sh"] = _render_script("bootstrap")
-        files["scripts/check.sh"] = _render_script("check")
+        files["scripts/bootstrap.example"] = _render_script("bootstrap")
+        files["scripts/check.example"] = _render_script("check")
     if scaffold_type in {"api", "bot", "worker"}:
         module_dir = f"src/{scaffold_type}"
-        files[f"{module_dir}/main.py"] = _render_entrypoint(scaffold_type)
+        files[f"{module_dir}/entrypoint.example"] = _render_entrypoint(scaffold_type)
     return files
 
 

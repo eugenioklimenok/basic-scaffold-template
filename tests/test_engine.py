@@ -59,7 +59,7 @@ class EngineTests(unittest.TestCase):
             )
             self.assertEqual(result["status"], "planned")
             action_paths = {item["path"] for item in result["actions"]}
-            self.assertIn(str(tmp / "soporte-bot" / "src" / "bot" / "main.py"), action_paths)
+            self.assertIn(str(tmp / "soporte-bot" / "src" / "bot" / "entrypoint.example"), action_paths)
             self.assertIn(str(tmp / "soporte-bot" / "Makefile"), action_paths)
             self.assertIn(str(tmp / "soporte-bot" / ".gitignore"), action_paths)
 

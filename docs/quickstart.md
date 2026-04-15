@@ -13,3 +13,5 @@ Optional flags:
 - `--with-gitignore`
 - `--with-makefile`
 - `--with-scripts`
+
+After generation, replace placeholder files with the commands and entrypoints required by your stack.

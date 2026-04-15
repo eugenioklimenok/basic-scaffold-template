@@ -1,6 +1,7 @@
 # basic-scaffold-template
 
 Framework mínimo para generar estructuras base de proyectos sin instalar servicios ni tocar configuración del host.
+El contenido generado es agnóstico de lenguaje y deja placeholders donde cada equipo define su stack.
 
 ## Incluye
 
@@ -31,6 +32,13 @@ python3 ./bin/new-scaffold soporte-bot --base-path /home/alex/apps --type bot --
 - `api`
 - `bot`
 - `worker`
+
+## Notas del scaffold
+
+- `generic` crea solo estructura común y archivos base.
+- `api`, `bot` y `worker` agregan un `entrypoint.example` descriptivo, no código ejecutable de un lenguaje específico.
+- `--with-makefile` genera targets placeholder.
+- `--with-scripts` genera archivos `.example` para completar según el stack real.
 
 ## Desarrollo
 
