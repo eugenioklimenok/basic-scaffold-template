@@ -49,7 +49,11 @@ python3 -m unittest discover -s tests -v
 
 ## Documentación
 
+- ES:
 - Contrato CLI: `docs/contract.md`
 - Quickstart: `docs/quickstart.md`
 - Guía de usuario: `docs/guia-de-usuario.md`
 - Manual de uso: `docs/manual-de-uso.md`
+- EN:
+- User guide: `docs/user-guide.md`
+- Usage manual: `docs/usage-manual.md`
