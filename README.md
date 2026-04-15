@@ -10,6 +10,7 @@ El contenido generado es agnóstico de lenguaje y deja placeholders donde cada e
 - Templates por tipo en `templates/basic`
 - Tests unitarios y smoke en `tests`
 - Documentación corta en `docs`
+- Guía de usuario y manual paso a paso en `docs`
 
 ## Uso
 
@@ -45,3 +46,10 @@ python3 ./bin/new-scaffold soporte-bot --base-path /home/alex/apps --type bot --
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+## Documentación
+
+- Contrato CLI: `docs/contract.md`
+- Quickstart: `docs/quickstart.md`
+- Guía de usuario: `docs/guia-de-usuario.md`
+- Manual de uso: `docs/manual-de-uso.md`
